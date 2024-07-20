@@ -1,15 +1,21 @@
 Rails.application.routes.draw do
-  namespace :admin do
-      resources :invoices
-      resources :invoice_items
-      resources :products
-      resources :sales
-      resources :suppliers
-      resources :users
+  root 'pages#home'
 
-      root to: "invoices#index"
-    end
+  namespace :admin do
+    resources :invoices
+    resources :invoice_items
+    resources :products
+    resources :sales
+    resources :suppliers
+    resources :users
+
+    root to: "invoices#index"
+  end
+
   devise_for :users, controllers: { registrations: 'registrations' }
+  # devise_scope :user do
+  #   root 'devise/sessions#new'
+  # end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -18,7 +24,6 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  root "pages#home"
   get 'pages/about'
-  post 'users/sign_in', to: 'users#sign_in'
+  # post 'users/sign_in', to: 'users#sign_in'
 end

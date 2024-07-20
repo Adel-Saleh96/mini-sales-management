@@ -9,7 +9,7 @@
     </div>
 
     <!-- Login Form -->
-    <%= form_tag users_sign_in_path, method: :post do %>
+    <%= form_tag user_session_path, method: :post do %>
       <%= text_field_tag :user_name, nil, id: 'login', class: 'fadeIn second', placeholder: 'اسم المستخدم' %>
       <%= text_field_tag :password, nil, id: 'password', class: 'fadeIn third', placeholder: 'كلمة المرور' %>
       <%= submit_tag 'Log In', class: 'fadeIn fourth' %>

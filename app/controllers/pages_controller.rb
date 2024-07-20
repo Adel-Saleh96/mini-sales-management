@@ -1,6 +1,10 @@
 class PagesController < ApplicationController
   def home
-    redirect_to invoices_path if user_signed_in?
+    if user_signed_in?
+      redirect_to admin_invoices_path
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def about
