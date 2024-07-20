@@ -29,7 +29,7 @@ module Admin
     def authorized_action?(resource, action)
       return true if current_user.is_admin?
 
-      resource.model_name.name == 'Sale'
+      %w[Sale Product].include?(resource.model_name.name) #&& action != 'destroy'
     end
   end
 end

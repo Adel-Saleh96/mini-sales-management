@@ -12,7 +12,7 @@ class SaleDashboard < Administrate::BaseDashboard
     price: Field::String.with_options(searchable: false),
     product: Field::BelongsTo,
     quantity: Field::Number,
-    created_at: Field::DateTime,
+    created_at: Field::Date,
     updated_at: Field::DateTime,
   }.freeze
 
@@ -26,24 +26,22 @@ class SaleDashboard < Administrate::BaseDashboard
     price
     product
     quantity
+    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    price
     product
     quantity
     created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    price
     product
     quantity
   ].freeze

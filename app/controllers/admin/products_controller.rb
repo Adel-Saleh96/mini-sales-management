@@ -42,5 +42,12 @@ module Admin
 
     # See https://administrate-demo.herokuapp.com/customizing_controller_actions
     # for more information
+    #
+    def authorized_action?(resource, action)
+      return true if current_user.is_admin?
+
+      ['index', 'show'].include?(action)
+      # current_user.can?(resource, action)
+    end
   end
 end

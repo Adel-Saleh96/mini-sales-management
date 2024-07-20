@@ -12,7 +12,7 @@ class InvoiceItemDashboard < Administrate::BaseDashboard
     invoice: Field::BelongsTo,
     product: Field::BelongsTo,
     quantity: Field::Number,
-    created_at: Field::DateTime,
+    created_at: Field::Date,
     updated_at: Field::DateTime,
   }.freeze
 
@@ -36,7 +36,6 @@ class InvoiceItemDashboard < Administrate::BaseDashboard
     product
     quantity
     created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES

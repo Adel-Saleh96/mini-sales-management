@@ -24,3 +24,139 @@ ar:
       supplier:
         one: المورد
         other: الموردين
+
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              confirmation: "لا يتطابق مع تأكيد كلمة المرور"
+              blank: "يجب ألا يكون فارغًا"
+              too_short: "يجب أن يكون على الأقل %{count} حرفًا"
+            user_name:
+              blank: "يجب ألا يكون فارغًا"
+              taken: "موجود بالفعل"
+            password_confirmation:
+              blank: "يجب ألا يكون فارغًا"
+            is_admin:
+              inclusion: "يجب أن يكون صحيحًا أو خطأ"
+        product:
+          attributes:
+            name:
+              blank: "يجب ألا يكون فارغًا"
+              taken: "موجود بالفعل"
+            description:
+              blank: "يجب ألا يكون فارغًا"
+            price:
+              blank: "يجب ألا يكون فارغًا"
+              not_a_number: "يجب أن يكون رقمًا"
+            quantity_in_stock:
+              blank: "يجب ألا يكون فارغًا"
+              not_a_number: "يجب أن يكون رقمًا"
+        invoice:
+          attributes:
+            invoice_number:
+              blank: "يجب ألا يكون فارغًا"
+              taken: "موجود بالفعل"
+            total_amount:
+              blank: "يجب ألا يكون فارغًا"
+              not_a_number: "يجب أن يكون رقمًا"
+            supplier:
+              blank: "يجب ألا يكون فارغًا"
+            date:
+              blank: "يجب ألا يكون فارغًا"
+        invoice_item:
+          attributes:
+            quantity:
+              blank: "يجب ألا يكون فارغ"
+              not_a_number: "يجب أن يكون رقمًا"
+            price:
+              blank: "يجب ألا يكون فارغًا"
+              not_a_number: "يجب أن يكون رقمًا"
+        sale:
+          attributes:
+            quantity:
+              blank: "يجب ألا يكون فارغ"
+              not_a_number: "يجب أن يكون رقمًا"
+              less_than_or_equal_to: "يجب أن يكون أقل من أو يساوي %{count}"
+
+            product:
+              blank: "يجب ألا يكون فارغًا"
+            price:
+              blank: "يجب ألا يكون فارغًا"
+              not_a_number: "يجب أن يكون رقمًا"
+
+        supplier:
+          attributes:
+            name:
+              blank: "يجب ألا يكون فارغًا"
+              taken: "موجود بالفع"
+
+    attributes:
+      user:
+        id: "الرقم"
+        user_name: "اسم المستخدم"
+        password: "كلمة المرور"
+        password_confirmation: "تأكيد كلمة المرور"
+        is_admin: "مدير"
+        created_at: "تاريخ الإنشاء"
+        updated_at: "تاريخ التحديث"
+
+      product:
+        id: "الرقم"
+        name: "الاسم"
+        description: "الوصف"
+        price: "السعر"
+        quantity_in_stock: "الكمية المتوفرة"
+        created_at: "تاريخ الإنشاء"
+        updated_at: "تاريخ التحديث"
+        invoice_items: "عناصر الفاتورة"
+        invoices: "الفواتير"
+        sales: "المبيعات"
+
+      invoice:
+        id: "الرقم"
+        invoice_number: "رقم الفاتور"
+        total_amount: "المبلغ الإجمالي"
+        supplier: "المورد"
+        date: "تاريخ الفاتورة"
+        invoice_items: "عناصر الفاتورة"
+        products: "المنتجات"
+        created_at: "تاريخ الإنشاء"
+        updated_at: "تاريخ التحديث"
+        supplier_id: "المورد"
+
+      invoice_item:
+        id: "الرقم"
+        invoice: "الفاتورة"
+        product: "المنتج"
+        quantity: "الكمية"
+        price: "السعر"
+        total_amount: "المبلغ الإجمالي"
+        created_at: "تاريخ الإنشاء"
+        updated_at: "تاريخ التحديث"
+        product_id: "المنتج"
+        invoice_id: "الفاتورة"
+
+      sale:
+        id: "الرقم"
+        invoice: "الفاتورة"
+        # date: "تاريخ البيع"
+        total_amount: "المبلغ الإجمالي"
+        created_at: "تاريخ الإنشاء"
+        updated_at: "تاريخ التحديث"
+        quantity: "الكمية"
+        product: "المنتج"
+        price: "السعر"
+        product_id: "المنتج"
+
+      supplier:
+        id: "الرقم"
+        name: "الاسم"
+
+
+  errors:
+    messages:
+      not_saved:
+        one: "لم يتم حفظ %{model}"
+        other: "لم يتم حفظ %{model}"

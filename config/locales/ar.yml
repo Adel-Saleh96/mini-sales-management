@@ -3,6 +3,11 @@ ar:
     formats:
       default: "%Y-%m-%d"
   administrate:
+    form:
+      error: "يرجى تصحيح الأخطاء أدناه"
+      errors: "هناك بعض الأخطاء، يرجى التحقق منها أدناه"
+      required: "مطلوب"
+
     actions:
       edit_resource: "تعديل %{name}"
       show_resource: "عرض %{name}"
@@ -25,7 +30,7 @@ ar:
       remove: "إزالة"
       more: "المزيد"
       export: "تصدير"
-      submit: "إرسال"
+      submit: "حفظ"
       bulk_actions:
         title: "الإجراءات الجماعية"
         content: "حدد العناصر التي تريد تطبيق الإجراء عليها"
@@ -114,6 +119,8 @@ ar:
         total_amount: "المبلغ الإجمالي"
         created_at: "تاريخ الإنشاء"
         updated_at: "تاريخ التحديث"
+        product_id: "المنتج"
+        invoice_id: "الفاتورة"
 
       sale:
         id: "الرقم"

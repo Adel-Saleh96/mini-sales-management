@@ -42,5 +42,11 @@ module Admin
 
     # See https://administrate-demo.herokuapp.com/customizing_controller_actions
     # for more information
+    #
+    def authorized_action?(resource, action)
+      return true if current_user.is_admin? #|| action != :destroy
+
+      %w[Sale Product].include?(resource.model_name.name) && action != 'destroy'
+    end
   end
 end

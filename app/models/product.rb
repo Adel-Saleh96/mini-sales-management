@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
-  has_many :invoice_items
+  has_many :invoice_items, dependent: :destroy
   has_many :invoices, through: :invoice_items
-  has_many :sales
+  has_many :sales, dependent: :destroy
 
   validates :name, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }

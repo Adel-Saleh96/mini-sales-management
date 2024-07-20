@@ -14,7 +14,7 @@ class SupplierDashboard < Administrate::BaseDashboard
     invoices: Field::HasMany,
     name: Field::String,
     phone: Field::String,
-    created_at: Field::DateTime,
+    created_at: Field::Date,
     updated_at: Field::DateTime,
   }.freeze
 
@@ -34,23 +34,20 @@ class SupplierDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    name
     address
     email
-    invoices
-    name
     phone
     created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    name
     address
     email
-    invoices
-    name
     phone
   ].freeze
 
@@ -70,6 +67,6 @@ class SupplierDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(supplier)
-    "المورد رقم ##{supplier.id}"
+    "#{supplier.name}"
   end
 end

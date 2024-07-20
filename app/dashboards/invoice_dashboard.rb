@@ -15,7 +15,7 @@ class InvoiceDashboard < Administrate::BaseDashboard
     products: Field::HasMany,
     supplier: Field::BelongsTo,
     total_amount: Field::String.with_options(searchable: false),
-    created_at: Field::DateTime,
+    created_at: Field::Date,
     updated_at: Field::DateTime,
   }.freeze
 
@@ -36,13 +36,9 @@ class InvoiceDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     date
-    invoice_items
-    invoice_number
-    products
-    supplier
     total_amount
-    created_at
-    updated_at
+    invoice_items
+    supplier
   ].freeze
 
   # FORM_ATTRIBUTES

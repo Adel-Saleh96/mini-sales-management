@@ -9,7 +9,6 @@ class Invoice < ApplicationRecord
 
   before_validation :set_default, on: :create
   before_validation :calculate_total_amount
-  after_create :update_inventory
 
   private
 
@@ -20,13 +19,5 @@ class Invoice < ApplicationRecord
 
   def calculate_total_amount
     self.total_amount = invoice_items.sum { |item| item.quantity * item.product.price }
-  end
-
-  def update_inventory
-    invoice_items.each do |item|
-      product = item.product
-      product.quantity_in_stock += item.quantity
-      product.save!
-    end
   end
 end

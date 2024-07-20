@@ -16,7 +16,7 @@ class ProductDashboard < Administrate::BaseDashboard
     price: Field::String.with_options(searchable: false),
     quantity_in_stock: Field::Number,
     sales: Field::HasMany,
-    created_at: Field::DateTime,
+    created_at: Field::Date,
     updated_at: Field::DateTime,
   }.freeze
 
@@ -37,28 +37,23 @@ class ProductDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    description
-    invoice_items
-    invoices
     name
+    description
     price
     quantity_in_stock
-    sales
     created_at
-    updated_at
+    invoices
+    sales
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    description
-    invoice_items
-    invoices
     name
+    description
     price
     quantity_in_stock
-    sales
   ].freeze
 
   # COLLECTION_FILTERS
@@ -77,6 +72,6 @@ class ProductDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(product)
-    "منتج رقم#{product.id}"
+    "#{product.name}"
   end
 end
