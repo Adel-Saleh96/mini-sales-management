@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_19_141014) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_20_021001) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,11 +44,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_19_141014) do
   end
 
   create_table "sales", force: :cascade do |t|
-    t.integer "product_id"
+    t.bigint "product_id", null: false
     t.integer "quantity"
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_sales_on_product_id"
   end
 
   create_table "suppliers", force: :cascade do |t|
@@ -61,14 +62,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_19_141014) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "user_name"
+    t.string "user_name", null: false
     t.string "password"
-    t.boolean "is_admin"
+    t.boolean "is_admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end
 
   add_foreign_key "invoice_items", "invoices"
   add_foreign_key "invoice_items", "products"
   add_foreign_key "invoices", "suppliers"
+  add_foreign_key "sales", "products"
 end
