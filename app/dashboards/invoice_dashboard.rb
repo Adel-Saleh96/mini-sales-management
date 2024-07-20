@@ -50,11 +50,7 @@ class InvoiceDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     date
-    invoice_items
-    invoice_number
-    products
     supplier
-    total_amount
   ].freeze
 
   # COLLECTION_FILTERS

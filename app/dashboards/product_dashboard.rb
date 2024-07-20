@@ -27,9 +27,10 @@ class ProductDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    name
     description
-    invoice_items
-    invoices
+    quantity_in_stock
+    price
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
