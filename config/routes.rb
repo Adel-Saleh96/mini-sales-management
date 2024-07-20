@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :invoices
+      resources :invoice_items
+      resources :products
+      resources :sales
+      resources :suppliers
+      resources :users
+
+      root to: "invoices#index"
+    end
   devise_for :users, controllers: { registrations: 'registrations' }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
