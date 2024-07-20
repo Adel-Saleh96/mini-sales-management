@@ -63,7 +63,7 @@ class InvoiceItemDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how invoice items are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(invoice_item)
-  #   "InvoiceItem ##{invoice_item.id}"
-  # end
+  def display_resource(invoice_item)
+    "عناصر الفاتورة رقم #{invoice_item.invoice_id}"
+  end
 end

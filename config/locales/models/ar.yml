@@ -1,0 +1,26 @@
+ar:
+  activerecord:
+    models:
+      user:
+        one: المستخدم
+        other: المستخدمون
+
+      product:
+        one: المنتج
+        other: المنتجات
+
+      invoice:
+        one: الفاتورة
+        other: الفواتير
+
+      invoice_item:
+        one: بند الفاتورة
+        other: عناصر الفواتير
+
+      sale:
+        one: عملية بيع
+        other: عمليات البيع
+
+      supplier:
+        one: المورد
+        other: الموردين

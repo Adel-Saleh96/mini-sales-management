@@ -27,21 +27,15 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    encrypted_password
+    user_name
     is_admin
-    password
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    encrypted_password
     is_admin
-    password
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
     user_name
     created_at
     updated_at
@@ -51,13 +45,9 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    encrypted_password
+    user_name
     is_admin
     password
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
-    user_name
   ].freeze
 
   # COLLECTION_FILTERS
@@ -75,7 +65,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(user)
+    "المستخدم رقم #{user.id}"
+  end
 end

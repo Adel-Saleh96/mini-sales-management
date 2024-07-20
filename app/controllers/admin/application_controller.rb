@@ -19,5 +19,9 @@ module Admin
     # def records_per_page
     #   params[:per_page] || 20
     # end
+    #
+    def show_search_bar?
+      true
+    end
   end
 end

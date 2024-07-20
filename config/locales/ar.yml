@@ -1,0 +1,139 @@
+ar:
+  date:
+    formats:
+      default: "%Y-%m-%d"
+  administrate:
+    actions:
+      edit_resource: "تعديل %{name}"
+      show_resource: "عرض %{name}"
+      destroy_resource: "حذف %{name}"
+      new_resource: "إنشاء %{name}"
+      create_resource: "إنشاء %{name}"
+      add_new: "إضافة جديد"
+      edit: "تعديل"
+      show: "عرض"
+      destroy: "حذف"
+      new: "إنشاء"
+      create: "إنشاء"
+      search: "بحث"
+      filter: "تصفية"
+      add_filter: "إضافة تصفية"
+      reset_filter: "إعادة تعيين التصفية"
+      back: "رجوع"
+      confirm: "تأكيد"
+      save: "حفظ"
+      remove: "إزالة"
+      more: "المزيد"
+      export: "تصدير"
+      submit: "إرسال"
+      bulk_actions:
+        title: "الإجراءات الجماعية"
+        content: "حدد العناصر التي تريد تطبيق الإجراء عليها"
+        button: "تطبيق"
+
+    dashboard:
+      welcome: "مرحبا بك في لوحة التحكم"
+    fields:
+      select: "اختر"
+      search: "ابحث"
+      no_options: "لا توجد خيارات"
+      no_results: "لا توجد نتائج"
+      add_new: "إضافة جديد"
+      edit: "تعديل"
+      delete: "حذف"
+      show: "عرض"
+      create: "إنشاء"
+      save: "حفظ"
+      filter: "تصفية"
+      filters:
+        date_range: "نطاق التاريخ"
+        select_date: "اختر التاريخ"
+        select_month: "اختر الشهر"
+        select_year: "اختر السنة"
+        select_time: "اختر الوقت"
+        select_datetime: "اختر التاريخ والوقت"
+        select: "اختر"
+        search: "ابحث"
+        select_all: "اختر الكل"
+        clear_all: "مسح الكل"
+        select_placeholder: "اختر..."
+        search_placeholder: "ابحث..."
+        select_all_label: "اختر الكل"
+        clear_all_label: "مسح الكل"
+      user:
+        belongs_to: منشور ينتمي إليه
+      product:
+        belongs_to: فئة ينتمي إليها
+      invoice:
+        belongs_to: مورد ينتمي إليه
+      sale:
+        belongs_to: منتج ينتمي إليه
+      supplier:
+        belongs_to: منتج ينتمي إليه
+
+  helpers:
+    label:
+      user:
+        id: "الرقم"
+        user_name: "اسم المستخدم"
+        password: "كلمة المرور"
+        password_confirmation: "تأكيد كلمة المرور"
+        is_admin: "مدير"
+        created_at: "تاريخ الإنشاء"
+        updated_at: "تاريخ التحديث"
+
+      product:
+        id: "الرقم"
+        name: "الاسم"
+        description: "الوصف"
+        price: "السعر"
+        quantity_in_stock: "الكمية المتوفرة"
+        created_at: "تاريخ الإنشاء"
+        updated_at: "تاريخ التحديث"
+        invoice_items: "عناصر الفاتورة"
+        invoices: "الفواتير"
+        sales: "المبيعات"
+
+      invoice:
+        id: "الرقم"
+        invoice_number: "رقم الفاتورة"
+        total_amount: "المبلغ الإجمالي"
+        supplier: "المورد"
+        date: "تاريخ الفاتورة"
+        invoice_items: "عناصر الفاتورة"
+        products: "المنتجات"
+        created_at: "تاريخ الإنشاء"
+        updated_at: "تاريخ التحديث"
+
+      invoice_item:
+        id: "الرقم"
+        invoice: "الفاتورة"
+        product: "المنتج"
+        quantity: "الكمية"
+        price: "السعر"
+        total_amount: "المبلغ الإجمالي"
+        created_at: "تاريخ الإنشاء"
+        updated_at: "تاريخ التحديث"
+
+      sale:
+        id: "الرقم"
+        invoice: "الفاتورة"
+        # date: "تاريخ البيع"
+        total_amount: "المبلغ الإجمالي"
+        created_at: "تاريخ الإنشاء"
+        updated_at: "تاريخ التحديث"
+        quantity: "الكمية"
+        product: "المنتج"
+        price: "السعر"
+        product_id: "المنتج"
+
+      supplier:
+        id: "الرقم"
+        name: "الاسم"
+        address: "العنوان"
+        phone: "الهاتف"
+        email: "البريد الإلكتروني"
+        created_at: "تاريخ الإنشاء"
+        updated_at: "تاريخ التحديث"
+        products: "المنتجات"
+        invoices: "الفواتير"

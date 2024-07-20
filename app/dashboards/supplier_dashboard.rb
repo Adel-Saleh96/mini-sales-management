@@ -69,7 +69,7 @@ class SupplierDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how suppliers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(supplier)
-  #   "Supplier ##{supplier.id}"
-  # end
+  def display_resource(supplier)
+    "المورد رقم ##{supplier.id}"
+  end
 end

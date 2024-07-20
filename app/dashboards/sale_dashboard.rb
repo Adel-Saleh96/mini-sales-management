@@ -60,10 +60,14 @@ class SaleDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
+  # Add search and filter attributes
+  # SEARCHABLE_ATTRIBUTES = %i[id created_at].freeze
+  # FILTERABLE_ATTRIBUTES = %i[created_at].freeze
+
   # Overwrite this method to customize how sales are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(sale)
-  #   "Sale ##{sale.id}"
-  # end
+  def display_resource(sale)
+    "عملية البيع رقم #{sale.id}"
+  end
 end
