@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :suppliers
     resources :users
 
-    root to: "invoices#index"
+    root to: "sales#index"
   end
 
   devise_for :users, controllers: { registrations: 'registrations' }

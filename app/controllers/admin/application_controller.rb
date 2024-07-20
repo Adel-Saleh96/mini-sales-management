@@ -23,5 +23,13 @@ module Admin
     def show_search_bar?
       true
     end
+
+    # Return true if the current user can access the given
+    # resource, false otherwise.
+    def authorized_action?(resource, action)
+      return true if current_user.is_admin?
+
+      resource.model_name.name == 'Sale'
+    end
   end
 end
