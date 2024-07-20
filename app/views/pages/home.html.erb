@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <%# <img src="https://www.b-cube.in/wp-content/uploads/2014/05/aditya-300x177.jpg" id="icon" alt="User Icon" /> %>
+      <h1>  متجر محاسن </h1>
+    </div>
+
+    <!-- Login Form -->
+    <%= form_tag users_sign_in_path, method: :post do %>
+      <%= text_field_tag :user_name, nil, id: 'login', class: 'fadeIn second', placeholder: 'اسم المستخدم' %>
+      <%= text_field_tag :password, nil, id: 'password', class: 'fadeIn third', placeholder: 'كلمة المرور' %>
+      <%= submit_tag 'Log In', class: 'fadeIn fourth' %>
+    <% end %>
+
+    <div id="formFooter">
+      <a class="underlineHover" href="/users/sign_up"> إنشاء حساب </a>
+    </div>
+
+  </div>
+</div>

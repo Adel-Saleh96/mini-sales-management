@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -12,5 +15,13 @@
 
   <body>
     <%= yield %>
+
+    <footer class="py-4">
+      <div class="container d-flex justify-content-center">
+        <p>
+          تم التطوير ب ❤️ بواسطة عادل صالح &copy;
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
