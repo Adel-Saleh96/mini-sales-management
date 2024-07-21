@@ -25,9 +25,9 @@ class SupplierDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    name
     address
     email
-    invoices
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

@@ -44,10 +44,7 @@ module Admin
     # for more information
     #
     def authorized_action?(resource, action)
-      return true if current_user.is_admin?
-
-      ['index', 'show'].include?(action)
-      # current_user.can?(resource, action)
+      current_user.is_admin? || (%w[Sale Product].include?(resource.model_name.name) && ![:destroy, :edit, :new].include?(action))
     end
   end
 end

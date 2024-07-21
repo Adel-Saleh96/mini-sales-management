@@ -1,0 +1,31 @@
+ar:
+  devise:
+    confirmations:
+      not_found_in_database: 'اسم المستخدم أو كلمة المرور غير صحيحين'
+      unauthenticated: 'يجب أن تكون مسجلًا للدخول حتى تستطيع المتابعة'
+    failure:
+      not_found_in_database: 'اسم المستخدم أو كلمة المرور غير صحيحين'
+      user:
+        not_found_in_database: 'اسم المستخدم أو كلمة المرور غير صحيحين'
+
+      invalid: 'اسم المستخدم أو كلمة مرور غير صالحة'
+      unauthenticated: 'يجب أن تكون مسجلًا للدخول حتى تستطيع المتابعة'
+    passwords:
+      send_instructions: 'سوف نرسل لك بريدًا إلكترونيًا يحتوي على تعليمات خاصة بتغيير كلمة المرور'
+      updated: 'تم تغيير كلمة المرور بنجاح، وتم تسجيل الدخول'
+    registrations:
+      signed_up: 'أهلًا بك، تم تسجيل دخولك بنجاح'
+    sessions:
+      signed_in: 'تم تسجيل الدخول بنجاح'
+      signed_out: 'تم تسجيل الخروج بنحاح'
+      already_signed_out: 'تم تسجيل الخروج بنجاح'
+  errors:
+    messages:
+      already_confirmed: "تم التأكيد بالفعل، يرجى محاولة تسجيل الدخول"
+      confirmation_period_expired: "يجب التأكيد خلال %{period}، يرجى طلب تأكيد جديد"
+      expired: "انتهت صلاحيته، يرجى طلب واحدة جديدة"
+      not_found: "لم يتم العثور عليه"
+      not_locked: "لم يكن مقفلا"
+      not_saved:
+        one: "هناك خطأ واحد يمنع حفظ %{resource} هذا:"
+        other: "%{count} أخطاء منعت حفظ %{resource} هذا:"

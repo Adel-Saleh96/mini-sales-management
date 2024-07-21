@@ -16,7 +16,8 @@ class UserDashboard < Administrate::BaseDashboard
     reset_password_sent_at: Field::DateTime,
     reset_password_token: Field::String,
     user_name: Field::String,
-    created_at: Field::DateTime,
+    is_admin_i18n: Field::String,
+    created_at: Field::Date,
     updated_at: Field::DateTime,
   }.freeze
 
@@ -28,14 +29,14 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     user_name
-    is_admin
+    is_admin_i18n
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    is_admin
+    is_admin_i18n
     user_name
     created_at
     updated_at

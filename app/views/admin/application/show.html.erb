@@ -40,7 +40,7 @@ as well as a link to its edit page.
   </div>
 </header>
 
-<section class="main-content__body rtl-layout">
+<section class="main-content__body">
   <dl>
     <% page.attributes.each do |title, attributes| %>
       <fieldset class="<%= "field-unit--nested" if title.present? %>">
@@ -49,15 +49,16 @@ as well as a link to its edit page.
         <% end %>
 
         <% attributes.each do |attribute| %>
-          <dt class="attribute-label" id="<%= attribute.name %>">
+          <dt class="attribute-label" id="<%= attribute.name %>" style="float: right;">
           <%= t(
             "helpers.label.#{resource_name}.#{attribute.name}",
             default: page.resource.class.human_attribute_name(attribute.name),
           ) %>
           </dt>
 
-          <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
-              ><%= render_field attribute, page: page %></dd>
+          <dd class="attribute-data attribute-data--<%=attribute.html_class%>" style="float: left;"
+              ><%= render_field attribute, page: page %>
+            </dd>
         <% end %>
       </fieldset>
     <% end %>

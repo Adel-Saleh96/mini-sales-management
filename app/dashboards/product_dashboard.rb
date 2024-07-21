@@ -42,9 +42,9 @@ class ProductDashboard < Administrate::BaseDashboard
     price
     quantity_in_stock
     created_at
-    invoices
-    sales
   ].freeze
+  # invoices
+  # sales
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed

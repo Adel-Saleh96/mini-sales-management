@@ -13,4 +13,8 @@ class User < ApplicationRecord
   def will_save_change_to_email?
     false
   end
+
+  def is_admin_i18n
+    is_admin? ? 'نعم' : 'لا'
+  end
 end

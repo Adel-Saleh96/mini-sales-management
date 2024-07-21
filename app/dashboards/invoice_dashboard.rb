@@ -36,9 +36,9 @@ class InvoiceDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     date
+    supplier
     total_amount
     invoice_items
-    supplier
   ].freeze
 
   # FORM_ATTRIBUTES

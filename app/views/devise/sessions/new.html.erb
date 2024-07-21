@@ -7,6 +7,10 @@
       <%# <img src="https://www.b-cube.in/wp-content/uploads/2014/05/aditya-300x177.jpg" id="icon" alt="User Icon" /> %>
       <h1>  متجر محاسن </h1>
     </div>
+    <div class='container my-3' >
+      <p class='notice'><%= notice %></p>
+      <p class='alert p-0'><%= alert %></p>
+    </div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= f.text_field :user_name, id: 'login', class: 'fadeIn second', placeholder: 'اسم المستخدم' %>

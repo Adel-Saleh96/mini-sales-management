@@ -76,9 +76,10 @@ ar:
         sale:
           attributes:
             quantity:
-              blank: "يجب ألا يكون فارغ"
-              not_a_number: "يجب أن يكون رقمًا"
-              less_than_or_equal_to: "يجب أن يكون أقل من أو يساوي %{count}"
+              blank: "يجب ألا تكون فارغ"
+              not_a_number: "يجب أن تكون رقمًا"
+              less_than_or_equal_to: "يجب أن تكون أقل من أو يساوي %{count}"
+              greater_than: 'يجب ان تكون أكبر من الصفر'
 
             product:
               blank: "يجب ألا يكون فارغًا"
@@ -101,6 +102,7 @@ ar:
         is_admin: "مدير"
         created_at: "تاريخ الإنشاء"
         updated_at: "تاريخ التحديث"
+        is_admin_i18n: "مدير"
 
       product:
         id: "الرقم"
