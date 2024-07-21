@@ -108,7 +108,7 @@ ar:
         id: "الرقم"
         name: "الاسم"
         description: "الوصف"
-        price: "السعر"
+        price: "سعر البيع"
         quantity_in_stock: "الكمية المتوفرة"
         created_at: "تاريخ الإنشاء"
         updated_at: "تاريخ التحديث"
@@ -133,7 +133,7 @@ ar:
         invoice: "الفاتورة"
         product: "المنتج"
         quantity: "الكمية"
-        price: "السعر"
+        price: "سعر البيع"
         total_amount: "المبلغ الإجمالي"
         created_at: "تاريخ الإنشاء"
         updated_at: "تاريخ التحديث"
@@ -149,7 +149,7 @@ ar:
         updated_at: "تاريخ التحديث"
         quantity: "الكمية"
         product: "المنتج"
-        price: "السعر"
+        price: "سعر البيع"
         product_id: "المنتج"
 
       supplier:

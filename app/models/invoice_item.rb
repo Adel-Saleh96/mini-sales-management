@@ -3,6 +3,7 @@ class InvoiceItem < ApplicationRecord
   belongs_to :product
 
   validates :quantity, presence: true, numericality: { greater_than: 0, only_integer: true }
+  validates :price, presence: true, numericality: { greater_than: 0 }
 
   after_create :update_invoice_total_amount
   after_create :update_inventory

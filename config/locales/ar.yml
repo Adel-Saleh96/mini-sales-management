@@ -91,7 +91,7 @@ ar:
         id: "الرقم"
         name: "الاسم"
         description: "الوصف"
-        price: "السعر"
+        price: "سعر البيع"
         quantity_in_stock: "الكمية المتوفرة"
         created_at: "تاريخ الإنشاء"
         updated_at: "تاريخ التحديث"
