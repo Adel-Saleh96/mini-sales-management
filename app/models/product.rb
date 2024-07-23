@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id                :bigint           not null, primary key
+#  description       :text
+#  name              :string           not null
+#  price             :decimal(10, 2)
+#  quantity_in_stock :integer          default(0), not null
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
 class Product < ApplicationRecord
   has_many :invoice_items, dependent: :destroy
   has_many :invoices, through: :invoice_items

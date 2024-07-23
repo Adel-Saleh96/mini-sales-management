@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: invoices
+#
+#  id             :bigint           not null, primary key
+#  date           :date
+#  invoice_number :string
+#  total_amount   :decimal(10, 2)   not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  supplier_id    :bigint           not null
+#
+# Indexes
+#
+#  index_invoices_on_supplier_id  (supplier_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (supplier_id => suppliers.id)
+#
 class Invoice < ApplicationRecord
   belongs_to :supplier
   has_many :invoice_items, dependent: :destroy

@@ -37,6 +37,7 @@ gem "redis", ">= 4.0.1"
 
 gem "devise", "~> 4.9"
 gem 'administrate', '~> 0.20.1'
+gem 'annotate', '~> 3.2'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
