@@ -2,13 +2,14 @@
 #
 # Table name: invoice_items
 #
-#  id         :bigint           not null, primary key
-#  price      :decimal(10, 2)
-#  quantity   :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  invoice_id :bigint           not null
-#  product_id :bigint           not null
+#  id           :bigint           not null, primary key
+#  quantity     :integer          not null
+#  total_amount :decimal(10, 2)
+#  unit_price   :decimal(10, 2)
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  invoice_id   :bigint           not null
+#  product_id   :bigint           not null
 #
 # Indexes
 #

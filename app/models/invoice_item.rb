@@ -2,13 +2,14 @@
 #
 # Table name: invoice_items
 #
-#  id         :bigint           not null, primary key
-#  price      :decimal(10, 2)
-#  quantity   :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  invoice_id :bigint           not null
-#  product_id :bigint           not null
+#  id           :bigint           not null, primary key
+#  quantity     :integer          not null
+#  total_amount :decimal(10, 2)
+#  unit_price   :decimal(10, 2)
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  invoice_id   :bigint           not null
+#  product_id   :bigint           not null
 #
 # Indexes
 #
@@ -25,20 +26,37 @@ class InvoiceItem < ApplicationRecord
   belongs_to :product
 
   validates :quantity, presence: true, numericality: { greater_than: 0, only_integer: true }
-  validates :price, presence: true, numericality: { greater_than: 0 }
+  validates :unit_price, presence: true, numericality: { greater_than: 0 }
 
-  after_create :update_invoice_total_amount
-  after_create :update_inventory
+  before_validation :calculate_total_amount
+  after_save :update_invoice_total_amount
+  after_save :update_inventory, if: :saved_change_to_quantity?
+  after_destroy :reduce_invoice_total_amount
+  after_destroy :reduce_inventory
 
   private
 
+  def calculate_total_amount
+    self.total_amount = self.quantity * self.unit_price
+  end
+
   def update_invoice_total_amount
-    invoice.total_amount += quantity * product.price
+    invoice.total_amount += self.total_amount
     invoice.save!
   end
 
   def update_inventory
     product.quantity_in_stock += self.quantity
+    product.save!
+  end
+
+  def reduce_invoice_total_amount
+    invoice.total_amount -= self.total_amount
+    invoice.save!
+  end
+
+  def reduce_inventory
+    product.quantity_in_stock -= self.quantity
     product.save!
   end
 end

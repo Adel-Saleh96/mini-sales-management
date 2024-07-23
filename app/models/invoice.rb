@@ -28,7 +28,7 @@ class Invoice < ApplicationRecord
   validates :total_amount, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
   before_validation :set_default, on: :create
-  before_validation :calculate_total_amount
+  before_save :calculate_total_amount
 
   private
 
@@ -38,6 +38,6 @@ class Invoice < ApplicationRecord
   end
 
   def calculate_total_amount
-    self.total_amount = invoice_items.sum { |item| item.quantity * item.product.price }
+    self.total_amount = self.invoice_items.sum(&:total_amount)
   end
 end

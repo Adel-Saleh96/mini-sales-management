@@ -12,7 +12,8 @@ class InvoiceItemDashboard < Administrate::BaseDashboard
     invoice: Field::BelongsTo,
     product: Field::BelongsTo,
     quantity: Field::Number,
-    price: Field::String.with_options(searchable: false),
+    unit_price: Field::String.with_options(searchable: false),
+    total_amount: Field::String.with_options(searchable: false),
     created_at: Field::Date,
     updated_at: Field::DateTime,
   }.freeze
@@ -27,7 +28,8 @@ class InvoiceItemDashboard < Administrate::BaseDashboard
     invoice
     product
     quantity
-    price
+    unit_price
+    total_amount
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,7 +39,8 @@ class InvoiceItemDashboard < Administrate::BaseDashboard
     invoice
     product
     quantity
-    price
+    unit_price
+    total_amount
     created_at
   ].freeze
 
@@ -48,7 +51,7 @@ class InvoiceItemDashboard < Administrate::BaseDashboard
     invoice
     product
     quantity
-    price
+    unit_price
   ].freeze
 
   # COLLECTION_FILTERS

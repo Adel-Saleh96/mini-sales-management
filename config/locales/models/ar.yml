@@ -133,7 +133,7 @@ ar:
         invoice: "الفاتورة"
         product: "المنتج"
         quantity: "الكمية"
-        price: "سعر البيع"
+        unit_price: "سعر الواحدة"
         total_amount: "المبلغ الإجمالي"
         created_at: "تاريخ الإنشاء"
         updated_at: "تاريخ التحديث"
