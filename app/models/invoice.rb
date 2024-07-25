@@ -25,19 +25,14 @@ class Invoice < ApplicationRecord
 
   validates :invoice_number, presence: true
   validates :date, presence: true
-  validates :total_amount, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
   before_validation :set_default, on: :create
-  before_save :calculate_total_amount
 
   private
 
   def set_default
     self.invoice_number ||= "INV-#{Time.current.to_i}"
     self.date ||= Time.current
-  end
-
-  def calculate_total_amount
-    self.total_amount = self.invoice_items.sum(&:total_amount)
+    self.total_amount ||= 0
   end
 end
