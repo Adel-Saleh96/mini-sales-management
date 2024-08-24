@@ -159,6 +159,7 @@ ar:
 
   errors:
     messages:
+      record_invalid: 'غير صالح'
       not_saved:
         one: "لم يتم حفظ %{model}"
         other: "لم يتم حفظ %{model}"

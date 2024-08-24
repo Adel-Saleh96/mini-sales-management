@@ -87,24 +87,28 @@ invoice2 = Invoice.create(
 InvoiceItem.create(
   invoice: invoice1,
   product: product1,
+  unit_price: 10,
   quantity: 20
 )
 
 InvoiceItem.create(
   invoice: invoice1,
   product: product2,
+  unit_price: 10,
   quantity: 10
 )
 
 InvoiceItem.create(
   invoice: invoice2,
   product: product2,
+  unit_price: 10,
   quantity: 15
 )
 
 InvoiceItem.create(
   invoice: invoice2,
   product: product3,
+  unit_price: 10,
   quantity: 50
 )
 
